@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import herramientas.FileController;
+import model.Decrypter;
+import model.Encrypter;
 
 public class Window extends JFrame {
 	
@@ -72,14 +74,46 @@ public class Window extends JFrame {
 				
 				if(file.getSelectedFile() !=null) {
 					
+					String password = JOptionPane.showInputDialog("Ingresa la contraseña para encriptar el archivo seleccionado");
+					
+					if(password != null && !password.equals("")) {
+						
+						Encrypter encrypter = new Encrypter(password, file.getSelectedFile());
+						encrypter.encryptFile();
+						
+					}
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "No has seleccionado ningún archivo para encriptar", "Error!", JOptionPane.ERROR_MESSAGE);
+				}
+				
+			} catch(Exception ex) {
+				
+			}
+			
+		});
+		
+		decryptButton.addActionListener(e -> {
+			
+			
+			JFileChooser file = new JFileChooser();
+			file.showOpenDialog(this);
+			
+			try {
+				
+				if(file.getSelectedFile() !=null) {
+					
 					String password = JOptionPane.showInputDialog("Por favor ingresa la contraseña para encriptar el archivo seleccionado");
 					
 					if(password != null && !password.equals("")) {
 						
-						
+						Decrypter decrypter = new Decrypter(password, file.getSelectedFile());
+						decrypter.decryptFile();					
 						
 					}
 					
+				}else {
+					JOptionPane.showMessageDialog(null, "No has seleccionado ningún archivo para desencriptar", "Error!", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			} catch(Exception ex) {

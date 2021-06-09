@@ -72,7 +72,7 @@ public class Encrypter {
 		Files.write(newFile, encrypt, StandardOpenOption.CREATE);
 		System.out.println(newFile);
 		
-		JOptionPane.showMessageDialog(null, "El archivo ha sido guardado en: "+ FileController.PATH + "/ArchivosEncriptados/", "Archivo Encriptado", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "El archivo encriptado ha sido guardado en: "+ FileController.PATH + "/ArchivosEncriptados/", "Archivo Encriptado", JOptionPane.INFORMATION_MESSAGE);
 		
 			
 		}catch (Exception e) {
