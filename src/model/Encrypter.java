@@ -63,6 +63,7 @@ public class Encrypter {
 		Cipher cip = Cipher.getInstance("AES");
 		cip.init(Cipher.ENCRYPT_MODE, secretKey);
 		byte[] encrypt = cip.doFinal(contentsWithHash);
+		
 		String folderEncrypt = FileController.PATH + "ArchivosEncriptados/";
 		File folder = new File(folderEncrypt);
 		folder.mkdirs();

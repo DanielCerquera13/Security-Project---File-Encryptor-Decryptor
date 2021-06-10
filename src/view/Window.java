@@ -103,7 +103,7 @@ public class Window extends JFrame {
 				
 				if(file.getSelectedFile() !=null) {
 					
-					String password = JOptionPane.showInputDialog("Por favor ingresa la contraseña para encriptar el archivo seleccionado");
+					String password = JOptionPane.showInputDialog("Por favor ingresa la contraseña para desencriptar el archivo seleccionado");
 					
 					if(password != null && !password.equals("")) {
 						

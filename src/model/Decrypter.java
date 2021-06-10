@@ -36,8 +36,8 @@ public class Decrypter {
 			SecretKeySpec secretKey = new SecretKeySpec(raw, "AES");
 			Cipher cip = Cipher.getInstance("AES");
 			cip.init(Cipher.DECRYPT_MODE, secretKey);
-			
 			byte[] decrypt = cip.doFinal(contents);
+			
 			System.out.println(""+ decrypt.length);
 			byte[] byteHash = new byte[40];
 			byte[] data = new byte[decrypt.length - byteHash.length];
